@@ -7,7 +7,7 @@
        <product-item/>
     </div> -->
     <div v-for="(ProductItem,index) in prodctList" class="col-lg-3" :key="index">
-       <product-item :ProductItem="ProductItem"/>
+       <product-item :ProductItem="ProductItem" @handle-buy="handleBy"/>
     </div>
 
    </div>
@@ -25,6 +25,12 @@ export default {
    },
  components:{
   ProductItem
+ },
+ methods:{
+   handleBy(ProductItem){
+   console.log("!2",ProductItem)
+   this.$emit('handle-buy',ProductItem)
+   }
  }
 }
 </script>

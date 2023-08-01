@@ -64,7 +64,7 @@
   <teleport to="#app">
     <app-modal :issOpen="issOpenModalCartList" :handlecloseModal="handleCloseModalCartList">
        <section>
-         Nội dung danh sách giỏi hàng
+       <CartListVue :cartList="cartList"/>
        </section>
   
   </app-modal>
@@ -76,10 +76,17 @@
 </template>
 
 <script>
-// import AppModal from './AppModal.vue'
+import CartListVue from './CartList.vue';
+
 // export default {
 //   components: { AppModal },}
 export default{
+  props:{
+    cartList:{
+      type:Array
+    }
+  },
+  components: { CartListVue },
   data(){
      return {
       issOpenModalCartList:false, // đóng modal 

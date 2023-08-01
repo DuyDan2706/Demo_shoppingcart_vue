@@ -2,11 +2,11 @@
 <template>
   <div>
     <header>
-    <TheHeader/>
+    <TheHeader :cartList="cartList"/>
   </header>
    
   <main class="container">
- <product-list/>
+ <product-list @handle-buy="handleBy"/>
   </main>
   </div>
  
@@ -20,7 +20,21 @@ import ProductList from './components/ProductList.vue';
    components :{
     TheHeader,
     ProductList,
+   },
+   data (){
+    return {
+      cartList:[],
+
+    }
+   },
+   methods:{
+   handleBy(ProductItem){
+   console.log("!2",ProductItem)
+  //  this.$emit('handle-buy',ProductItem)
+  //this.cartList.push(ProductItem)
+  this.cartList = [...this.cartList,ProductItem]
    }
+ }
  }
 </script>
 
