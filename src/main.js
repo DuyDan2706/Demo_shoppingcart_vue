@@ -12,3 +12,6 @@ import AppModal from './components/AppModal.vue'
 const app =createApp(App)
 app.component("app-modal",AppModal)
 app.mount('#app')
+
+
+// modal dung robal de dung nhiu noi cho tien

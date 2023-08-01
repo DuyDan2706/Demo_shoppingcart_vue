@@ -52,25 +52,55 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
       <div>
-        <button class="btn btn-danger">
+        <button class="btn btn-danger" @click="handleOpenModalCartList">
           <i class="fa fa-shopping-cart"></i>
           <span class="badge badge-light ml-1">0</span>
         </button>
       </div>
     </div>
   </nav>
+  <!--  đóng hay mở phụ thuộc vào isOpen là true or False -->
+   
+  <teleport to="#app">
+    <app-modal :issOpen="issOpenModalCartList" :handlecloseModal="handleCloseModalCartList">
+       <section>
+         Nội dung danh sách giỏi hàng
+       </section>
+  
+  </app-modal>
+  </teleport>
+
+
+
+ 
 </template>
 
 <script>
-export default {}
+// import AppModal from './AppModal.vue'
+// export default {
+//   components: { AppModal },}
+export default{
+  data(){
+     return {
+      issOpenModalCartList:false, // đóng modal 
+     }
+  },
+  methods: {
+    handleOpenModalCartList() {
+      this.issOpenModalCartList = true;//  mở modal
+    },
+    handleCloseModalCartList() {
+      this.issOpenModalCartList = false;//  Tắt modal
+    },
+  }
+}
 </script>
 
 <style>
 .logo {
   font-size: 30px;
-  background: -webkit-linear-gradient(#41b883,#35495e);
+  background: -webkit-linear-gradient(#41b883, #35495e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 </style>

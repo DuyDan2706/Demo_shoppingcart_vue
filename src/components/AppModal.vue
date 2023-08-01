@@ -1,27 +1,77 @@
 <template>
-  <div class="modal">
-     <div class="modal_container">
+  <div v-if="issOpen" class="modal" @click="handleClose">
+     <div class="modal_container" @click.stop>
         <div class="modal__header">
-            <h1 class="modal_title"> Detail</h1>
-            <div class="modal_close">
+            <h1 class="modal_title"> Cart</h1>
+            <div class="modal_close" @click="handleClose">
                 <i class="fa fa-times"></i>
             </div>
         </div>
         <div class="modal__body">
-            <h1>nội dung</h1>
+         <slot></slot>
         </div>
         <div class="modal__footer">
         </div>
      </div>
   </div>
+  
 </template>
 
 <script>
 export default {
+  props: {
+    issOpen:{
+        type:Boolean,
 
+    },
+    handlecloseModal: {
+    type: Function,
+  },
+  },
+  
+  methods:{
+    handleClose(){
+     this.handlecloseModal();
+    },
+  }
 }
 </script>
 
 <style>
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top:0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.modal_container{
+    width: 950px;
+    margin: auto;
+    margin-top: 70px;
+    background: white;
+    border: 1px solid #888;
+    padding: 10px 20px;
+}
+.modal__header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
 
+}
+.modal_close{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+}
+.modal_close:hover{
+    background-color:rgba(0,0,0,0.2) ;
+    cursor: pointer;
+}
 </style>
