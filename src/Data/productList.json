@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Bộ Bàn Phím",
+    "image": "https://salt.tikicdn.com/cache/280x280/ts/product/a5/73/d1/f16d699486eec1a2eac8d7cab40dce64.jpg",
+    "description": "Phím và chuột có dây dài Phù hợp với nhiều loại hệ điều hành khác nhau, nhiều cấu hình máy của PC hoặc laptop. Đèn Led bắt mắt, phù hợp cho các game thủ chơi Game vào ban đêm Phím giả cơ nghe âm thanh rất thanh và êm Chuột Chuyên Game được thiết kế riêng dành cho game thủ và phòng net",
+    "price": 134000,
+    "sale": 10,
+    "quantityInStock": 10
+  },
+  {
+    "id": 2,
+    "name": "Chuột Captain Marvel ",
+    "image": "https://salt.tikicdn.com/cache/280x280/ts/product/e1/80/7e/79d028b4ff4d3fb8c687064744a6ef91.jpg.webp",
+    "description": "Phím và chuột có dây dài Phù hợp với nhiều loại hệ điều hành khác nhau, nhiều cấu hình máy của PC hoặc laptop. Đèn Led bắt mắt, phù hợp cho các game thủ chơi Game vào ban đêm Phím giả cơ nghe âm thanh rất thanh và êm Chuột Chuyên Game được thiết kế riêng dành cho game thủ và phòng net",
+    "price": 250000,
+    "sale": 5,
+    "quantityInStock": 15
+  },
+  {
+    "id": 3,
+    "name": "Laptop Gaming",
+    "image": "https://salt.tikicdn.com/cache/280x280/ts/product/73/2d/b4/a84afa4813a098d0b4c7f1dd22afec61.jpg",
+    "description": "Phím và chuột có dây dài Phù hợp với nhiều loại hệ điều hành khác nhau, nhiều cấu hình máy của PC hoặc laptop. Đèn Led bắt mắt, phù hợp cho các game thủ chơi Game vào ban đêm Phím giả cơ nghe âm thanh rất thanh và êm Chuột Chuyên Game được thiết kế riêng dành cho game thủ và phòng net",
+    "price": 10500000,
+    "sale": 0,
+    "quantityInStock": 5
+  },
+  {
+    "id": 4,
+    "name": "Lót Chuột",
+    "image": "https://salt.tikicdn.com/cache/280x280/ts/product/80/70/38/b5fa75631fbd7ea7b1b2dd07793f8839.png.webp",
+    "description": "lót chuột chống chày sước bàn ghế",
+    "price": 230000,
+    "sale": 5,
+    "quantityInStock": 35
+  },
+  {
+    "id": 5,
+    "name": "Tai Nghe",
+    "image": "https://salt.tikicdn.com/cache/280x280/ts/product/6e/08/df/b5143585d00e66210127fcf705711bea.jpg.webp",
+    "description": "Tai Nghe hiện đại",
+    "price": 1000000,
+    "sale": 10,
+    "quantityInStock": 10
+  },
+  {
+    "id": 6,
+    "name": "Loa Sony",
+    "image": "https://salt.tikicdn.com/cache/280x280/ts/product/89/99/fe/5da797fb92ea56f22ffd6ec52bdde7e8.png.webp",
+    "description": "Nghe Nhạc cực chất",
+    "price": 750000,
+    "sale": 5,
+    "quantityInStock": 15
+  },
+  {
+    "id": 7,
+    "name": "Màn Hình View Sonic",
+    "image": "https://salt.tikicdn.com/cache/280x280/ts/product/fc/1d/a7/4a756a7ec8afa8b63581eff8da959a07.jpg.webp",
+    "description": "Độ Phân Giải cực nét full HD không che",
+    "price": 134000,
+    "sale": 10,
+    "quantityInStock": 10
+  },
+  {
+    "id": 8,
+    "name": "Mic Thu âm",
+    "image": "https://salt.tikicdn.com/cache/280x280/ts/product/fc/1d/a7/4a756a7ec8afa8b63581eff8da959a07.jpg.webp",
+    "description": "Khử Ổn Siêu Hiệu Quả",
+    "price": 300000,
+    "sale": 0,
+    "quantityInStock": 7
+  }
+]
