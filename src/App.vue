@@ -32,8 +32,21 @@ import ProductList from './components/ProductList.vue';
    console.log("!2",ProductItem)
   //  this.$emit('handle-buy',ProductItem)
   //this.cartList.push(ProductItem)
-  this.cartList = [...this.cartList,ProductItem]
+  
+  const index = this.cartList.findIndex(cart=> cart.id ===ProductItem.id)  //kiểm trả đã tồn tại 
+  if(index !==-1){
+    // tìm thấy product itwem trong cartList 
+    this.cartList[index].amout +=1
+  }else {
+    //ko tìm thấy
+
+    const newProductItem = {...ProductItem,amout:1}
+
+
+
+  this.cartList = [...this.cartList,newProductItem]
    }
+  }
  }
  }
 </script>

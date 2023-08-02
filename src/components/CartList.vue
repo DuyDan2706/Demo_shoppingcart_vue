@@ -21,15 +21,23 @@
             <td>
 
                 <button class="btn btn-success"> <i class="fa fa-arrow-up"></i></button>
-                  <span class="mx-2">1</span>
+                  <span class="mx-2">{{ cart.amout }}</span>
                 <button class="btn btn-success"> <i class="fa fa-arrow-down"></i></button>
             </td>
-            <td>0</td>
+            <td>{{ cart.amout * cart.price  }}</td>
             <td>
                 <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
             </td>
         </tr>
-        
+        <tr>
+            <td scope="row">Tổng tiền </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ sumMoney }}</td>
+            <td></td>
+        </tr>
     </tbody>
  </table>
 </template>
@@ -41,6 +49,11 @@ export default {
       type:Array
     }
   },
+  computed:{
+    sumMoney() {
+       return this.cartList.reduce((sum,cart)=> sum += cart.amout * cart.price , 0)
+    }
+  }
 }
 </script>
 
