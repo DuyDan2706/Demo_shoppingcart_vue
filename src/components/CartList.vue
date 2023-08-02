@@ -26,11 +26,11 @@
             </td>
             <td>{{ cart.amout * cart.price  }}</td>
             <td>
-                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-danger" @click="handleDelete(cart)"><i class="fa fa-trash"></i></button>
             </td>
         </tr>
         <tr>
-            <td scope="row">Tổng tiền </td>
+            <td scope="row" class="btn ">Tổng tiền </td>
             <td></td>
             <td></td>
             <td></td>
@@ -52,6 +52,11 @@ export default {
   computed:{
     sumMoney() {
        return this.cartList.reduce((sum,cart)=> sum += cart.amout * cart.price , 0)
+    }
+  },
+  methods : {
+    handleDelete(cart){
+      this.$emit("handle-delete-cart",cart)
     }
   }
 }

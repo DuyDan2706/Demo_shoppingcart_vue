@@ -2,7 +2,7 @@
 <template>
   <div>
     <header>
-    <TheHeader :cartList="cartList"/>
+    <TheHeader :cartList="cartList" @handle-delete-cart="handleDelete"/>
   </header>
    
   <main class="container">
@@ -46,7 +46,10 @@ import ProductList from './components/ProductList.vue';
 
   this.cartList = [...this.cartList,newProductItem]
    }
-  }
+  },
+  handleDelete(cart){
+      this.cartList= this.cartList.filter(cartItem => cartItem.id !== cart.id)
+    }
  }
  }
 </script>

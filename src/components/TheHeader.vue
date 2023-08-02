@@ -60,45 +60,43 @@
     </div>
   </nav>
   <!--  đóng hay mở phụ thuộc vào isOpen là true or False -->
-   
+
   <teleport to="#app">
     <app-modal :issOpen="issOpenModalCartList" :handlecloseModal="handleCloseModalCartList">
-       <section>
-       <CartListVue :cartList="cartList"/>
-       </section>
-  
-  </app-modal>
+      <section>
+        <CartListVue :cartList="cartList" @handle-delete-cart="handleDelete" />
+      </section>
+    </app-modal>
   </teleport>
-
-
-
- 
 </template>
 
 <script>
-import CartListVue from './CartList.vue';
+import CartListVue from './CartList.vue'
 
 // export default {
 //   components: { AppModal },}
-export default{
-  props:{
-    cartList:{
-      type:Array
+export default {
+  props: {
+    cartList: {
+      type: Array
     }
   },
   components: { CartListVue },
-  data(){
-     return {
-      issOpenModalCartList:false, // đóng modal 
-     }
+  data() {
+    return {
+      issOpenModalCartList: false // đóng modal
+    }
   },
   methods: {
     handleOpenModalCartList() {
-      this.issOpenModalCartList = true;//  mở modal
+      this.issOpenModalCartList = true //  mở modal
     },
     handleCloseModalCartList() {
-      this.issOpenModalCartList = false;//  Tắt modal
+      this.issOpenModalCartList = false //  Tắt modal
     },
+    handleDelete(cart){
+      this.$emit("handle-delete-cart",cart)
+    }
   }
 }
 </script>
