@@ -20,9 +20,9 @@
             <td>{{ cart.quantityInStock }}</td>
             <td>
 
-                <button class="btn btn-success"> <i class="fa fa-arrow-up"></i></button>
+                <button class="btn btn-success" @click="handleupOrdowAmount(true,cart)"> <i class="fa fa-arrow-up"></i></button>
                   <span class="mx-2">{{ cart.amout }}</span>
-                <button class="btn btn-success"> <i class="fa fa-arrow-down"></i></button>
+                <button class="btn btn-success"  @click="handleupOrdowAmount(false,cart)"> <i class="fa fa-arrow-down"></i></button>
             </td>
             <td>{{ cart.amout * cart.price  }}</td>
             <td>
@@ -51,12 +51,17 @@ export default {
   },
   computed:{
     sumMoney() {
-       return this.cartList.reduce((sum,cart)=> sum += cart.amout * cart.price , 0)
+       return this.cartList.reduce((sum,cart)=> sum+= cart.amout * cart.price , 0)
     }
   },
   methods : {
     handleDelete(cart){
       this.$emit("handle-delete-cart",cart)
+    },
+    handleupOrdowAmount(status,cart){
+
+      console.log("cartlisst",status,cart)
+      this.$emit("handle-up-or-down-amount-cart",{status,cart})   
     }
   }
 }

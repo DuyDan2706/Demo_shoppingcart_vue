@@ -1,5 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand logo" href="#">Demo Test</a>
     <button
       class="navbar-toggler"
@@ -54,20 +55,27 @@
       <div>
         <button class="btn btn-danger" @click="handleOpenModalCartList">
           <i class="fa fa-shopping-cart"></i>
-          <span class="badge badge-light ml-1">0</span>
+          <span class="badge badge-light ml-1">{{ sumAmountCart }}</span>
         </button>
       </div>
     </div>
   </nav>
+
   <!--  đóng hay mở phụ thuộc vào isOpen là true or False -->
 
   <teleport to="#app">
     <app-modal :issOpen="issOpenModalCartList" :handlecloseModal="handleCloseModalCartList">
       <section>
-        <CartListVue :cartList="cartList" @handle-delete-cart="handleDelete" />
+        <CartListVue
+          :cartList="cartList"
+          @handle-delete-cart="handleDelete"
+          @handle-up-or-down-amount-cart="handleupOrdowAmount"
+        />
       </section>
     </app-modal>
   </teleport>
+  </div>
+  
 </template>
 
 <script>
@@ -87,6 +95,13 @@ export default {
       issOpenModalCartList: false // đóng modal
     }
   },
+  computed:{
+    // tinhs soos luong san pham
+    sumAmountCart(){
+  return this.cartList.reduce((sum,cart)=>(sum += cart.amount),0)
+    }
+ 
+  },
   methods: {
     handleOpenModalCartList() {
       this.issOpenModalCartList = true //  mở modal
@@ -94,8 +109,12 @@ export default {
     handleCloseModalCartList() {
       this.issOpenModalCartList = false //  Tắt modal
     },
-    handleDelete(cart){
-      this.$emit("handle-delete-cart",cart)
+    handleDelete(cart) {
+      this.$emit('handle-delete-cart', cart)
+    },
+    handleupOrdowAmount(params) {
+      console.log('header', params)
+      this.$emit('handle-up-or-down-amount-cart', params)
     }
   }
 }
